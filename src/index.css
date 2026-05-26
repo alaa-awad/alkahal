@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-arabic overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .rtl {
+    direction: rtl;
+  }
+  .ltr {
+    direction: ltr;
+  }
+  .glass-card {
+    @apply bg-dark-lighter/80 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
