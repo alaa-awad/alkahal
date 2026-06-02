@@ -75,7 +75,11 @@ const Services = () => {
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">{service.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">{service.desc}</p>
                 <div className="mt-6 flex justify-end">
-                  <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                  <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" onClick={() => {
+                    if (typeof window.gtag === 'function') {
+                      window.gtag('event', 'conversion', {'send_to': 'AW-18190526699/LvobCJSairUcEOvR9eFD'});
+                    }
+                  }} className="text-gold hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
                     {t('book_now')} &rarr;
                   </a>
                 </div>

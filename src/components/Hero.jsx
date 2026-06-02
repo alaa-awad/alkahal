@@ -52,6 +52,11 @@ const Hero = () => {
           >
             <a 
               href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'conversion', {'send_to': 'AW-18190526699/LvobCJSairUcEOvR9eFD'});
+                }
+              }}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-gold to-orange-500 text-dark font-bold text-lg px-8 py-4 rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all transform hover:-translate-y-1"
             >
               {t('book_now')}

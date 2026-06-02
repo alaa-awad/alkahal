@@ -57,7 +57,11 @@ const Navbar = () => {
                 <Globe size={18} />
                 <span className="text-sm font-bold uppercase">{i18n.language === 'ar' ? 'EN' : 'AR'}</span>
               </button>
-              <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" className="bg-gold hover:bg-gold-hover text-dark font-bold px-5 py-2 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-gold/20">
+              <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" onClick={() => {
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'conversion', {'send_to': 'AW-18190526699/LvobCJSairUcEOvR9eFD'});
+                }
+              }} className="bg-gold hover:bg-gold-hover text-dark font-bold px-5 py-2 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-gold/20">
                 {t('contact')}
               </a>
             </div>
@@ -95,7 +99,12 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="bg-gold text-center text-dark font-bold px-5 py-3 rounded-xl mt-4">
+              <a href="https://wa.me/971505161988" target="_blank" rel="noopener noreferrer" onClick={() => {
+                setIsOpen(false);
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'conversion', {'send_to': 'AW-18190526699/LvobCJSairUcEOvR9eFD'});
+                }
+              }} className="bg-gold text-center text-dark font-bold px-5 py-3 rounded-xl mt-4">
                 {t('contact')}
               </a>
             </div>
